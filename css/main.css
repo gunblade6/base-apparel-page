@@ -21,6 +21,10 @@
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+::selection {
+  color: var(--sat-red);
+  background-color: var(--sat-dimmed);
+}
 
 * {
   margin: 0;
@@ -31,6 +35,7 @@ body {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 main {
@@ -51,6 +56,7 @@ main {
   margin-bottom: 20px;
   width: 100px;
   cursor: pointer;
+  animation: slideInRight 1.2s ease 0s 1 normal forwards;
 }
 .left .logo img {
   width: 100%;
@@ -74,6 +80,8 @@ main {
   line-height: 1;
   text-transform: uppercase;
   margin-bottom: 1rem;
+  animation: slideInLeft 1s ease 0s 1 normal forwards;
+  -webkit-animation: slideInLeft 1s ease 0s 1 normal forwards;
 }
 .left .content h1 span.fr {
   display: block;
@@ -88,9 +96,13 @@ main {
   line-height: 1.5;
   font-size: 0.7rem;
   margin-bottom: 1.5rem;
+  animation: slideInRight 1.2s ease 0s 1 normal forwards;
+  -webkit-animation: slideInRight 1.2s ease 0s 1 normal forwards;
 }
 .left form {
   position: relative;
+  animation: slideInLeft 1s ease 0s 1 normal forwards;
+  -webkit-animation: slideInLeft 1s ease 0s 1 normal forwards;
 }
 .left form .input {
   position: relative;
@@ -261,6 +273,32 @@ main {
   }
   .left form .input > img {
     right: calc(5rem + 10px);
+  }
+}
+
+/* animations */
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 
