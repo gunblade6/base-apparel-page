@@ -30,14 +30,12 @@
 body {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
-  background-color: beige;
   min-height: 100vh;
 }
 
 main {
   width: 100%;
   min-height: 100vh;
-  background-color: red;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -52,6 +50,7 @@ main {
 .left .logo {
   margin-bottom: 20px;
   width: 100px;
+  cursor: pointer;
 }
 .left .logo img {
   width: 100%;
@@ -192,8 +191,13 @@ main {
 }
 
 .right {
-  height: 100%;
   display: none;
+  min-height: 100%;
+  overflow: hidden;
+}
+.right img {
+  width: 100%;
+  height: 100%;
 }
 /* responsive */
 
@@ -208,8 +212,55 @@ main {
   .right {
     display: block;
   }
-  .left .content h1 span.sec {
-    display: inline;
+
+  .left {
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .left .holder {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  .left .logo {
+    width: 150px;
+  }
+  .left .content {
+    text-align: left;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+  }
+  .left .content h1 {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+  .left .content p {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+  .left form .input input {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+  }
+  .left form.error .input input {
+    border: 2px solid var(--soft-red);
+  }
+  .left form button {
+    width: 5rem;
+  }
+  .left form .input > img {
+    right: calc(5rem + 10px);
   }
 }
 
