@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Watch solution](https://your-solution-url.com)
+- Solution URL: [Watch solution](https://www.frontendmentor.io/solutions/base-apperal-page-97GU5KlAtI)
 - Live Site URL: [Watch Live](https://m-base-apperal-page.netlify.app/)
 
 ## My process
