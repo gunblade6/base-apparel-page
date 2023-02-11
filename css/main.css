@@ -1,0 +1,219 @@
+:root {
+  --dark-red: hsl(0, 6%, 24%);
+  --soft-red: hsl(0, 93%, 68%);
+  --sat-red: hsl(0, 36%, 70%);
+  --sat-dimmed: rgb(229, 189, 189);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: 100%;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.left {
+  padding: 24px 30px;
+  background-image: url(../images/bg-pattern-desktop.svg);
+  background-position: center;
+  background-size: cover;
+}
+.left .logo {
+  margin-bottom: 20px;
+  width: 100px;
+}
+.left .logo img {
+  width: 100%;
+}
+
+.left .mobile_img {
+  margin: 0 -30px 0;
+  margin-bottom: 5rem;
+}
+.left .mobile_img img {
+  width: 100%;
+}
+.left .content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.left .content h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.left .content h1 span.fr {
+  display: block;
+  font-weight: 300;
+  color: var(--sat-red);
+}
+.left .content h1 span.sec {
+  display: block;
+}
+.left .content p {
+  color: var(--sat-red);
+  line-height: 1.5;
+  font-size: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+.left form {
+  position: relative;
+}
+.left form .input {
+  position: relative;
+}
+.left form .input input {
+  border: 1px solid var(--sat-dimmed);
+  padding: 0.8rem 1.5rem;
+  width: 100%;
+  font-size: 0.7rem;
+  border-radius: 100vw;
+  -webkit-border-radius: 100vw;
+  -moz-border-radius: 100vw;
+  -ms-border-radius: 100vw;
+  -o-border-radius: 100vw;
+  color: var(--sat-red);
+}
+.left form .input input::placeholder {
+  color: var(--sat-dimmed);
+}
+.left form .input input:focus {
+  outline: none;
+}
+.left form button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  right: 0;
+  width: 3.5rem;
+  height: 100%;
+  border-radius: 100vw;
+  -webkit-border-radius: 100vw;
+  -moz-border-radius: 100vw;
+  -ms-border-radius: 100vw;
+  -o-border-radius: 100vw;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  cursor: pointer;
+  box-shadow: 0 0 10px var(--sat-dimmed);
+  transition: 300ms ease;
+  -webkit-transition: 300ms ease;
+  -moz-transition: 300ms ease;
+  -ms-transition: 300ms ease;
+  -o-transition: 300ms ease;
+}
+.left form button.one {
+  z-index: 2;
+}
+.left form button.one:hover {
+  opacity: 0;
+}
+.left form button.two {
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 80%, 86%),
+    var(--sat-dimmed)
+  );
+  opacity: 1;
+  z-index: 1;
+}
+.left form button.one:hover ~ button.two {
+  opacity: 1;
+}
+.left form button img {
+  margin-left: 5px;
+}
+.left form .input > img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  /* the width of the button + 10px gap */
+  right: calc(3.5rem + 10px);
+  display: none;
+}
+.left form.error .input > img {
+  display: block;
+}
+.left form small {
+  color: var(--soft-red);
+  /* the left padding of the input */
+  left: 1.5rem;
+  bottom: -1.3rem;
+  position: absolute;
+  display: none;
+}
+.left form.error small {
+  display: block;
+}
+
+.right {
+  height: 100%;
+  display: none;
+}
+/* responsive */
+
+@media screen and (min-width: 767px) {
+  main {
+    flex-direction: row;
+  }
+
+  .left .mobile_img {
+    display: none;
+  }
+  .right {
+    display: block;
+  }
+  .left .content h1 span.sec {
+    display: inline;
+  }
+}
+
+/* 
+
+gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+*/
